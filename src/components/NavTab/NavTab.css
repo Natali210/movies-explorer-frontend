@@ -1,0 +1,44 @@
+.nav {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+  
+.nav__button {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  width: 96px;
+  justify-content: center;
+  background-color: #E8E8E8;
+  color: #FFFFFF;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.nav__button:hover {
+  background-color: #CBC8C8;
+}
+  
+@media screen and (max-width: 580px) {
+  .nav__list {
+    gap: 6px;
+  }
+  
+  .nav__button {
+    height: 26px;
+    width: 82px;
+    font-size: 10px;
+  }
+}

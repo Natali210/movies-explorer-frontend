@@ -1,0 +1,140 @@
+.about-project {
+  padding: 110px 70px 110px 70px;
+}
+
+.about-project__block-name {
+  font-size: 22px;
+  font-weight: 400;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #000000;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.about-project__content {
+  display: flex;
+  padding: 70px 0 0 0;
+  gap: 40px;
+}
+
+.about-project__content-frame {
+  max-width: 550px;
+}
+
+.about-project__title {
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 26px;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.about-project__description {
+  margin: 0;
+  padding: 0 0 110px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.about-project__study-scheme {
+  display: grid;
+  grid-template-columns: 228px 3fr;
+}
+
+.about-project__stage-line {
+  background-color: #F2F2F2;
+  min-height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 14px;
+  color: #000000;
+}
+
+.about-project__stage-line_black {
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+.about-project__stage-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0;
+  color: #A0A0A0;
+}
+
+@media screen and (max-width: 768px) {
+  .about-project {
+    padding: 90px 50px 90px 50px;
+  }
+  
+  .about-project__content {
+    padding: 70px 0 0 0;
+    gap: 36px;
+  }
+  
+  .about-project__title {
+    padding-bottom: 22px;
+  }
+  
+  .about-project__description {
+    font-size: 12px;
+    padding: 0 0 93px 0;
+    line-height: 18px;
+  }
+  
+  .about-project__study-scheme {
+    grid-template-columns: 140px 3fr;
+  }
+}
+  
+@media screen and (max-width: 580px) {
+  .about-project {
+    padding: 70px 18px 70px 18px;
+  }
+  
+  .about-project__block-name {
+    padding-bottom: 28px;
+    font-size: 18px;
+  }
+  
+  .about-project__content {
+    flex-direction: column;
+    gap: 56px;
+    padding: 60px 0 0 0;
+  }
+  
+  .about-project__title {
+    padding-bottom: 16px;
+    font-size: 18px;
+  }
+  
+  .about-project__description {
+    font-size: 11px;
+    padding: 0;
+    line-height: 16px;
+  }
+  
+  .about-project__study-scheme {
+    grid-template-columns: 100px 3fr;
+    padding-top: 60px;
+  }
+  
+  .about-project__stage-line {
+    font-size: 11px;
+    min-height: 35px;
+    margin-bottom: 10px;
+  }
+  
+  .about-project__stage-description {
+    font-size: 11px;
+    font-weight: 400;
+  }
+}
