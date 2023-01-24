@@ -9,14 +9,14 @@ import "./Main.css";
 function Main() {
   return (
     <>
+    <Header />
       <main className="main">
-        <Header />
         <Promo />
         <AboutProject />
         <Techs />
         <AboutMe />
-        <Footer />
       </main>
+    <Footer />
     </>
   );
 }

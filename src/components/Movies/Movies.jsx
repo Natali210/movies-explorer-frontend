@@ -8,10 +8,10 @@ function Movies() {
   return (
     <>
       <Header />
-      <section className="movies">
+      <main className="movies">
         <SearchForm />
         <MoviesCardList />
-      </section>
+      </main>
       <Footer />
     </>
   );

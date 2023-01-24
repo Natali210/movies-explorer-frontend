@@ -12,7 +12,7 @@ import NotFound from "../NotFound/NotFound";
 function App() {
   return (
     <div className="page">
-      <div className="root">
+      <main className="root">
         <Switch>
           <Route path={URLS.LANDING} exact><Main /></Route>
           <Route path={URLS.MOVIES} exact><Movies /></Route>
@@ -22,7 +22,7 @@ function App() {
           <Route path={URLS.LOGIN} exact><Login /></Route>
           <Route path="*"><NotFound /></Route>
         </Switch>
-      </div>
+      </main>
     </div>
   );
 }

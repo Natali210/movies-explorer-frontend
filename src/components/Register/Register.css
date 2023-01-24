@@ -58,6 +58,7 @@
   color: #FFFFFF;
   margin: 134px 0 16px 0;
   cursor: pointer;
+  border: none;
 }
 
 .form__button:hover {
