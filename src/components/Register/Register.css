@@ -65,6 +65,10 @@
   opacity: 60%;
 }
 
+.form__button_disabled {
+  background-color: #CBC8C8;
+}
+
 .form__signin-text {
   display: flex;
   justify-content: center;

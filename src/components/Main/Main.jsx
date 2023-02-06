@@ -1,4 +1,3 @@
-import Header from "../Header/Header";
 import AboutProject from "../AboutProject/AboutProject";
 import Promo from "../Promo/Promo";
 import AboutMe from "../AboutMe/AboutMe";
@@ -9,7 +8,6 @@ import "./Main.css";
 function Main() {
   return (
     <>
-    <Header />
       <main className="main">
         <Promo />
         <AboutProject />

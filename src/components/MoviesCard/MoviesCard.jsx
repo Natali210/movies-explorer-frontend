@@ -1,62 +1,32 @@
-import { URLS } from "../../utils/constants";
+import { URLS, BASE_URL } from "../../utils/constants";
 import "./MoviesCard.css";
 
-function MoviesCard() {
+function MoviesCard({ movie, isLiked, savedMovie, location }) {
+  function movieTime(data) {
+    const min = data % 60;
+    const hours = Math.floor(data / 60);
+    return hours ? `${hours}ч ${min}м` : `${min}м`;
+  }
+
   return (
     <>
       <div className="card__element">
-        <img src={require("../../images/picture-1.png")} className="card__photo" alt="Кадр из фильма"/>
+        <a className="movies__trailer" target="_blank" href={movie.trailerLink} rel="noreferrer">
+          <img className="card__photo" alt="Кадр из фильма"
+          src={`${location.pathname === URLS.MYMOVIES ? movie.image : `${BASE_URL}${movie.image.url}`}`}
+          />
+        </a>
         <div className="card__movie-info">
-          <p className="card__movie-title">33 слова о дизайне</p>
-          {window.location.pathname === URLS.MOVIES && (<button className="card__like-button"/>)}
-          {window.location.pathname === URLS.MYMOVIES && (<button className="card__remove-button"/>)}
+          <p className="card__movie-title">{movie.nameRU}</p>
+          <button
+            className={`card__like-button ${savedMovie.find((i) => i.movieId === movie.id)
+              ? "card__like-button_active" : location.pathname === URLS.MYMOVIES
+              ? "card__remove-button" : ""
+            }`}
+            onClick={() => isLiked(movie)}
+          />
         </div>
-        <p className="card__movie-duration">1ч 47м</p>
-      </div>
-      <div className="card__element">
-        <img src={require("../../images/picture-2.png")} className="card__photo" alt="Кадр из фильма"/>
-        <div className="card__movie-info">
-          <p className="card__movie-title">Киноальманах «100 лет дизайна»</p>
-          {window.location.pathname === URLS.MOVIES && (<button className="card__like-button card__like-button_active"/>)}
-          {window.location.pathname === URLS.MYMOVIES && (<button className="card__remove-button"/>)}
-        </div>
-        <p className="card__movie-duration">1ч 47м</p>
-      </div>
-      <div className="card__element">
-        <img src={require("../../images/picture-3.png")} className="card__photo" alt="Кадр из фильма"/>
-        <div className="card__movie-info">
-          <p className="card__movie-title">В погоне за Бенкси</p>
-          {window.location.pathname === URLS.MOVIES && (<button className="card__like-button"/>)}
-          {window.location.pathname === URLS.MYMOVIES && (<button className="card__remove-button"/>)}
-        </div>
-        <p className="card__movie-duration">1ч 47м</p>
-      </div>
-      <div className="card__element">
-        <img src={require("../../images/picture-4.png")} className="card__photo" alt="Кадр из фильма"/>
-        <div className="card__movie-info">
-          <p className="card__movie-title">Баския: Взрыв реальности</p>
-          {window.location.pathname === URLS.MOVIES && (<button className="card__like-button"/>)}
-          {window.location.pathname === URLS.MYMOVIES && (<button className="card__remove-button"/>)}
-        </div>
-        <p className="card__movie-duration">1ч 47м</p>
-      </div>
-      <div className="card__element">
-        <img src={require("../../images/picture-5.png")} className="card__photo" alt="Кадр из фильма"/>
-        <div className="card__movie-info">
-          <p className="card__movie-title">Бег это свобода</p>
-          {window.location.pathname === URLS.MOVIES && (<button className="card__like-button"/>)}
-          {window.location.pathname === URLS.MYMOVIES && (<button className="card__remove-button"/>)}
-        </div>
-        <p className="card__movie-duration">1ч 47м</p>
-      </div>
-      <div className="card__element">
-        <img src={require("../../images/picture-6.png")} className="card__photo" alt="Кадр из фильма"/>
-        <div className="card__movie-info">
-          <p className="card__movie-title">Книготорговцы</p>
-          {window.location.pathname === URLS.MOVIES && (<button className="card__like-button"/>)}
-          {window.location.pathname === URLS.MYMOVIES && (<button className="card__remove-button"/>)}
-        </div>
-        <p className="card__movie-duration">1ч 47м</p>
+        <p className="card__movie-duration">{movieTime(movie.duration)}</p>
       </div>
     </>
   );
