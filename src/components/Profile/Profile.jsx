@@ -12,10 +12,7 @@ function Profile({ changedUserData, unauthorizedUser }) {
   const validToUpdateProfile =
   (values.email !== currentProfile.email || values.name !== currentProfile.name) && nameRegExp.test(values.name) && emailRegExp.test(values.email);
 
-  useEffect(() => { if (currentProfile) 
-    {resetForm(currentProfile, {}, true);
-    }
-  }, [currentProfile, resetForm]);
+  useEffect(() => { resetForm(currentProfile) }, [currentProfile, resetForm]);
 
   function submitButton(evt) {
     evt.preventDefault();
@@ -26,7 +23,7 @@ function Profile({ changedUserData, unauthorizedUser }) {
   return (
     <>
     <section className="profile">
-      <h2 className="profile__greeting">{`Привет, ${currentProfile.name}!`}</h2>
+      <h2 className="profile__greeting">{`Привет, ${values.name}!`}</h2>
       <form className="profile__info">
         <label className="profile__info-item">
           <p className="profile__input-title">Имя</p>

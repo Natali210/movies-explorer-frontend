@@ -78,7 +78,6 @@ function App() {
         checkbox: "",
       });
       setIsAuthorized(true);
-      setCurrentUser(data);
       setIsConfirmed(true);
       setOpenStatusPopup(true);
       history.push(URLS.MOVIES);
@@ -166,7 +165,7 @@ function App() {
     }
 
     getContent();
-  }, []);
+  }, [isAuthorized]);
 
   // Получение с сервера фильмов текущего пользователя
   useEffect(() => {

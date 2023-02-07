@@ -8,7 +8,7 @@ import { URLS } from "../../utils/constants";
 
 function Header({ isAuthorized }) {
   const location = useLocation();
-  const enterPages = ["/signup", "/signin" ];
+  const enterPages = ["/signup", "/signin"];
   const [menuVisible, setmenuVisible] = useState(false);
 
   function handleMenuVisible() {
