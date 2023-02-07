@@ -12,4 +12,6 @@ GitHub: https://github.com/Natali210/movies-explorer-frontend
 
 Макет: https://disk.yandex.ru/d/D7ZKiF-SWzZIaA
 
+Ссылка на сайт: https://movies.nsarycheva.nomoredomains.club/
+
 Ссылка на pull request: https://github.com/Natali210/movies-explorer-frontend/pull/2
