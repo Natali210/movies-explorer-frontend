@@ -54,8 +54,8 @@ function App() {
     .then((data) => {
       if (!data) return;
       setSearchedValues({
-        value: '',
-        checkbox: '',
+        value: "",
+        checkbox: "",
       });
       setIsAuthorized(true);
       handleLogin({ email, password });
@@ -69,7 +69,6 @@ function App() {
 
   // Вход, авторизация пользователя
   function handleLogin({ email, password }) {
-    setIsAuthorized(true);
     return MainApi.signin(email, password)
     .then((data) => {
       if (!data) return;
@@ -78,8 +77,9 @@ function App() {
         checkbox: "",
       });
       setIsAuthorized(true);
-      setIsConfirmed(true);
       setOpenStatusPopup(true);
+    })
+    .then(() => {
       history.push(URLS.MOVIES);
     })
     .catch(() => {
