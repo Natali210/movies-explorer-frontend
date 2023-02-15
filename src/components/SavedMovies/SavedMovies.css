@@ -1,0 +1,13 @@
+.saved__nothing {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0 20px 0 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .saved__nothing {
+    margin: 30px 20px 0 20px;
+  }
+}

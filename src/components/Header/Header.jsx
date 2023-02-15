@@ -1,11 +1,14 @@
 import React, {useState} from "react";
+import { useLocation } from "react-router-dom";
 import "./Header.css";
 import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
 import { Link } from "react-router-dom";
 import { URLS } from "../../utils/constants";
 
-function Header() {
+function Header({ isAuthorized }) {
+  const location = useLocation();
+  const enterPages = ["/signup", "/signin"];
   const [menuVisible, setmenuVisible] = useState(false);
 
   function handleMenuVisible() {
@@ -15,17 +18,20 @@ function Header() {
   return (
     <header className="header">
       <div className="header__content">
-        <Logo />
-        {window.location.pathname === URLS.LANDING && (
-          <div className="header__authorization">
-            <Link className="header__auth-button" to={URLS.REGISTER}>Регистрация</Link>
-            <Link className="header__auth-button header__auth-button_dark" to={URLS.LOGIN}>Войти</Link>
-          </div>
-        )}
-
-        {(window.location.pathname === URLS.MYPROFILE ||
-          window.location.pathname === URLS.MOVIES ||
-          window.location.pathname === URLS.MYMOVIES) && (
+        {(location.pathname === URLS.MYPROFILE ||
+          location.pathname === URLS.MOVIES ||
+          location.pathname === URLS.MYMOVIES ||
+          location.pathname === URLS.LANDING) && <Logo />}
+        {!isAuthorized ? (       
+          <>
+            {!enterPages.includes(location.pathname) && (
+              <div className="header__authorization">
+                <Link className="header__auth-button" to={URLS.REGISTER}>Регистрация</Link>
+                <Link className="header__auth-button header__auth-button_dark" to={URLS.LOGIN}>Войти</Link>
+              </div>
+            )}
+          </>
+        ) : (
           <>
             <Navigation menuVisible={menuVisible} />
             <div
